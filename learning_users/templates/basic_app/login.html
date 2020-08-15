@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'basic_app/base.html' %}
+
+{% block title_block %}
+    <title>Login</title>
+{% endblock %}
+
+{% block body_block %}
+    <h1>Please Login</h1>
+    {% if not login_success  %}
+        <p class="text-danger">The Username or Password you provided was incorrect</p>
+    {% endif %}
+
+    <div class="jumbotron">
+
+        <form class="form" action="{% url 'basic_app: user_login' %}" method="post">
+            {% csrf_token %}
+            <label class="label" for="username">Username: </label>
+            <input class="" type="text" name="username" placeholder="Enter Username">
+
+            <label class="label" for="password">Password: </label>
+            <input class="" type="password" name="password">
+
+            <input class="btn-primary" type="submit" value="Login">
+        </form>
+
+        <label><b>If you don't have an account: </b></label>
+        <button class="btn-primary" value="Register Here" href="{% url 'basic_app:register' %}"></button>
+    </div>
+{% endblock %}
+

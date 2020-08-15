@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'basic_app/base.html' %}
+
+{% block title_block %}
+    <title>Hoes only</title>
+    {% load static %}
+{% endblock %}
+
+{% block body_block %}
+    <h1>Hey Charlie</h1>
+    <div class="jumbotron">
+        <img src="{% static 'Bernie_stfu.jpg' %}" alt="">
+    </div>
+{% endblock %}
